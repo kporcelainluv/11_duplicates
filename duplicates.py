@@ -22,8 +22,8 @@ def printing_duplicates(list_of_filenames):
     counter_of_file_names = Counter(list_of_filenames)
     print("The duplicates are: ")
     for name in counter_of_file_names:
-        value = counter_of_file_names[name]
-        if value >= 2:
+        number_of_duplicates = counter_of_file_names[name]
+        if number_of_duplicates >= 2:
             filesize_in_filename = name.index("-")
             print(name[:filesize_in_filename])
     return "Thank you for using the program!"
