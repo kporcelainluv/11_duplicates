@@ -11,11 +11,10 @@ python duplicates.py [path to your directory]
 ```
 output:
 The duplicates are:
-.DS_Store
-README.md
-HEAD
-screeenshot.png
-screenshot2.png
+.DS_Store  path to file: ~/Desktop/programming/devman/11_duplicates/.DS_Store
+README.md  path to file: ~/Desktop/programming/devman/11_duplicates/README.md
+screeenshot.png  path to file: ~/programming/devman/11_duplicates/screeenshot.png
+screenshot2.png  path to file: ~/Desktop/programming/devman/11_duplicates/screenshot2.png
 Thank you for using the program!
 ```
 
