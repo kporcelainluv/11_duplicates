@@ -3,18 +3,17 @@ import sys
 
 
 def collecting_filenames_from_dir(directory_path):
-    list_of_filenames_in_dir = dict()
+    dict_of_filenames_in_dir = dict()
     dictionary_of_duplicates = dict()
     for path, dirs, files_names in os.walk(directory_path):
         for filename in files_names:
             size_of_file = str(os.stat(os.path.join(path, filename)).st_size)
             name_and_size_of_file = (filename, size_of_file)
-            if name_and_size_of_file in list_of_filenames_in_dir:
+            if name_and_size_of_file in dict_of_filenames_in_dir:
                 dictionary_of_duplicates[name_and_size_of_file] = path
             else:
-                list_of_filenames_in_dir[name_and_size_of_file] = path
-    print(dictionary_of_duplicates)
-    return list_of_filenames_in_dir
+                dict_of_filenames_in_dir[name_and_size_of_file] = path
+    return dictionary_of_duplicates
 
 
 def finding_duplicates(dictionary_of_duplicates):
