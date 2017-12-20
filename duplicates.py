@@ -15,19 +15,17 @@ def collecting_filenames_from_dir(directory_path):
 
 def finding_duplicates(dict_of_filenames_in_dir):
     dictionary_of_duplicates = {}
-    for filename_and_path in dict_of_filenames_in_dir:
-        name_and_size_of_file = filename_and_path[0]
-        paths = filename_and_path[1]
-        if len(paths) >= 2:
-            dictionary_of_duplicates[name_and_size_of_file] = paths
-    for name_and_size in dictionary_of_duplicates:
-        print("filename:", name_and_size[0], end="\n")
-        for path_to_file in dictionary_of_duplicates[name_and_size]:
-            print("path to file:", os.path.join(os.getcwd() + "/" + path_to_file))
-    return "Thank you for using the program!"
+    for (name, size), paths in dict_of_filenames_in_dir:
+        if len(paths) > 1:
+            dictionary_of_duplicates[(name, size)] = paths
+    return dictionary_of_duplicates
 
 
 if __name__ == '__main__':
     if len(sys.argv) > 1:
         print("The duplicates are: ")
-        print(finding_duplicates(collecting_filenames_from_dir(sys.argv[1])))
+        duplicates = finding_duplicates(collecting_filenames_from_dir(sys.argv[1]))
+        for name_and_size in duplicates:
+            print("filename:", name_and_size[0], end="\n")
+            for path_to_file in duplicates[name_and_size]:
+                print("path to file:", os.path.join(os.getcwd() + path_to_file))
