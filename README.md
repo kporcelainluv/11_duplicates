@@ -1,5 +1,6 @@
 # Anti-Duplicator
 
+<<<<<<< Updated upstream
 The program searches through given path to find duplicates by name and size of file and prints names of duplicates out.
 
 # How to launch
@@ -26,6 +27,9 @@ path to file: /Users/Ksusha/Desktop/programming/devman/11_duplicates/directory1/
 path to file: /Users/Ksusha/Desktop/programming/devman/11_duplicates/directory1/new/newestnew1
 Thank you for using the program!
 ```
+=======
+[TODO. There will be project description]
+>>>>>>> Stashed changes
 
 # Project Goals
 
