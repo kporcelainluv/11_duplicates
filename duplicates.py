@@ -25,8 +25,7 @@ if __name__ == '__main__':
     if len(sys.argv) > 1:
         print("The duplicates are: ")
         duplicates = finding_duplicates(collecting_filenames_from_dir(sys.argv[1]))
-        for name_and_size in duplicates:
-            name_of_file = name_and_size[0]
-            print("filename:", name_of_file, end="\n")
-            for path_to_file in duplicates[name_and_size]:
-                print("path to file:", os.path.join(os.getcwd(), path_to_file))
+        for (name, size), paths in duplicates.items():
+            print("filename:", name, end="\n")
+            for path in paths:
+                print("path to file:", os.path.join(os.getcwd(), path))
